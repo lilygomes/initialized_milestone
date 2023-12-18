@@ -15,7 +15,7 @@ else{
 }
 //attempts to handle a failure where parse_url doesn't parse properly (usually happens when special characters are included)
 if (!$db_url || count($db_url) === 0) {
-    $matches;
+    $matches = array();
     $pattern = "/mysql:\/\/(\w+):(\w+)@([^:]+):(\d+)\/(\w+)/i";
     preg_match($pattern, $url, $matches);
     $db_url["host"] = $matches[3];
